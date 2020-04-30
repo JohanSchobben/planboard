@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-widget-button.component.scss']
 })
 export class AddWidgetButtonComponent implements OnInit {
+  open = false;
 
   constructor() { }
 
