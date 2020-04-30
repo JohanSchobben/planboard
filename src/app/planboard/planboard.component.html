@@ -1,0 +1,6 @@
+<app-cockpit
+  [planboardTitle]="(planboard$ | async).title"
+  (titleChange)="onTitleChange($event)"
+  (menuClick)="onMenuClick()"></app-cockpit>
+
+<app-add-widget-button></app-add-widget-button>

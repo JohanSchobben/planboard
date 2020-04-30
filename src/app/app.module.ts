@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import {DEFAULT_PLANBOARD_TOKEN} from './planboard/services/default-planboard.token';
+import {DEFAULT_PLANBOARD} from './planboard/default-planboard';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,11 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
   ],
-  providers: [],
+  providers: [
+    {provide: DEFAULT_PLANBOARD_TOKEN, useValue: DEFAULT_PLANBOARD}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

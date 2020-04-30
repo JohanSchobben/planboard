@@ -1,0 +1,9 @@
+<button
+  type="button"
+  class="sidenav-trigger"
+  aria-label="Toggle sidenav"
+  mat-icon-button
+  (click)="menuClick.emit()">
+  <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+</button>
+<input type="text" [value]="planboardTitle" #titleInput>
