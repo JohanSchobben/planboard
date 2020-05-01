@@ -1,0 +1,40 @@
+:host{
+  display: flex;
+  justify-content: center;
+}
+.placeholder {
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  margin: 0 .2rem;
+  &:hover{
+    background-color: darken(#fafafa, 5%);
+  }
+
+}
+
+.todo {
+  display: flex;
+  flex-direction: column;
+  &__title {
+    font-size: .8rem;
+    margin-bottom: .3rem;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .6rem;
+    &-box {
+      width: .6rem;
+      height: .6rem;
+      border: 1px solid black;
+    }
+  }
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

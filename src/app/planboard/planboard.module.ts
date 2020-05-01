@@ -5,11 +5,11 @@ import { PlanboardRoutingModule } from './planboard-routing.module';
 import { PlanboardComponent } from './planboard.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {DEFAULT_PLANBOARD} from './default-planboard';
-import {DEFAULT_PLANBOARD_TOKEN} from './services/default-planboard.token';
+import {MatButtonModule} from '@angular/material/button'
 import { AddWidgetButtonComponent } from './add-widget-button/add-widget-button.component';
 import { WidgetDrawerComponent } from './widget-drawer/widget-drawer.component';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -18,7 +18,9 @@ import { WidgetDrawerComponent } from './widget-drawer/widget-drawer.component';
     CommonModule,
     PlanboardRoutingModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatBottomSheetModule,
+    MatCardModule
   ],
 })
 export class PlanboardModule { }

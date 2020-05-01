@@ -1,6 +1,6 @@
-<app-cockpit
+<pb-cockpit
   [planboardTitle]="(planboard$ | async).title"
   (titleChange)="onTitleChange($event)"
-  (menuClick)="onMenuClick()"></app-cockpit>
+  (menuClick)="onMenuClick()"></pb-cockpit>
 
 <pb-add-widget-button (open)="openWidgetDrawer()"></pb-add-widget-button>

@@ -1,1 +1,8 @@
-<p>widget-drawer works!</p>
+<mat-card class="todo placeholder" role="button" (click)="add.emit(widgetType.Todo)">
+  <span class="todo__title">Todo lijst</span>
+  <div class="todo__item">Appels <div class="todo__item-box"></div></div>
+  <div class="todo__item">Peer <div class="todo__item-box"></div></div>
+</mat-card>
+<mat-card class="text placeholder" role="button">
+  simpel tekst
+</mat-card>

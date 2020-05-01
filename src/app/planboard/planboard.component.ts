@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {NavigationService} from '../navigation/navigation.service';
 import {PlanboardService} from './services/planboard.service';
 import {Observable} from 'rxjs';
-import {Planboard} from '../model';
+import {Planboard, WidgetType} from '../model';
+import {MatBottomSheet} from '@angular/material/bottom-sheet';
+import {WidgetDrawerComponent} from './widget-drawer/widget-drawer.component';
 
 @Component({
   selector: 'pb-planboard',
@@ -13,7 +15,8 @@ export class PlanboardComponent {
   planboard$: Observable<Planboard>;
   constructor(
     private navigationService: NavigationService,
-    private planboardService: PlanboardService
+    private planboardService: PlanboardService,
+    private bottomSheet: MatBottomSheet
   ) {
     this.planboard$ = planboardService.planboard$;
   }
@@ -27,6 +30,12 @@ export class PlanboardComponent {
   }
 
   public openWidgetDrawer(): void {
+    this.bottomSheet.open(WidgetDrawerComponent);
 
+  }
+
+  public onAdd(type: WidgetType){
+    this.bottomSheet.dismiss();
+    this.planboardService.AddWidget(type)
   }
 }
