@@ -5,7 +5,7 @@ import {Observable} from 'rxjs';
 import {Planboard} from '../model';
 
 @Component({
-  selector: 'app-planboard',
+  selector: 'pb-planboard',
   templateUrl: './planboard.component.html',
   styleUrls: ['./planboard.component.scss']
 })
@@ -22,7 +22,11 @@ export class PlanboardComponent {
     this.navigationService.menuClick();
   }
 
-  onTitleChange(newTitle: string) {
+  public onTitleChange(newTitle: string) {
     this.planboardService.updateTitle(newTitle);
+  }
+
+  public openWidgetDrawer(): void {
+
   }
 }

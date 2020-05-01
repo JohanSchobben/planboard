@@ -3,7 +3,7 @@ import {fromEvent, Subscription} from 'rxjs';
 import {debounceTime, distinctUntilChanged, pluck} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-cockpit',
+  selector: 'pb-cockpit',
   templateUrl: './cockpit.component.html',
   styleUrls: ['./cockpit.component.scss']
 })
