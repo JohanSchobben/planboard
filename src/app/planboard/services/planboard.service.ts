@@ -2,6 +2,7 @@ import {Inject, Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {Planboard, WidgetType} from '../../model';
 import {DEFAULT_PLANBOARD_TOKEN} from './default-planboard.token';
+import {Widget} from '../../model/widget.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,9 +26,14 @@ export class PlanboardService {
    }
 
    public AddWidget(type: WidgetType): void {
-     switch (type) {
-       case WidgetType.Todo:
-         this.
-     }
+     const planboard = this.planboardSubject.getValue();
+     const widget: Widget<any> = {
+       id: Date.now(),
+       left: 0,
+       top: 0,
+     };
+     planboard.widgets.push(widget);
+
+
    }
 }

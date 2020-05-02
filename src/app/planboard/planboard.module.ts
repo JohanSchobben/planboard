@@ -10,10 +10,11 @@ import { AddWidgetButtonComponent } from './add-widget-button/add-widget-button.
 import { WidgetDrawerComponent } from './widget-drawer/widget-drawer.component';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatCardModule} from '@angular/material/card';
+import { TodoWidgetComponent } from './widgets/todo-widget/todo-widget.component';
 
 
 @NgModule({
-  declarations: [PlanboardComponent, CockpitComponent, AddWidgetButtonComponent, WidgetDrawerComponent],
+  declarations: [PlanboardComponent, CockpitComponent, AddWidgetButtonComponent, WidgetDrawerComponent, TodoWidgetComponent],
   imports: [
     CommonModule,
     PlanboardRoutingModule,
