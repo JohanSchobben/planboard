@@ -11,6 +11,8 @@ import { WidgetDrawerComponent } from './widget-drawer/widget-drawer.component';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatCardModule} from '@angular/material/card';
 import { TodoWidgetComponent } from './widgets/todo-widget/todo-widget.component';
+import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { TodoWidgetComponent } from './widgets/todo-widget/todo-widget.component
     MatIconModule,
     MatButtonModule,
     MatBottomSheetModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule,
+    MatInputModule
   ],
 })
 export class PlanboardModule { }
