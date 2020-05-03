@@ -1,16 +1,16 @@
 <mat-card>
   <mat-card-title>
-    <input type="text" [value]="todoList.title" (change)="onTitleChange($event.target.value)">
+    <input class="title-input" type="text" [value]="todoList?.title || 'nieuwe todolijst'" (change)="onTitleChange($event.target.value)">
   </mat-card-title>
   <mat-card-content>
     <mat-list>
-      <mat-list-option *ngFor="let task of todoList.tasks" [selected]="task.done">
+      <mat-list-item *ngFor="let task of todoList?.tasks">
         {{ task.taskName }}
-      </mat-list-option>
+      </mat-list-item>
       <mat-list-item>
         <mat-form-field appearance="fill">
           <mat-label>Input</mat-label>
-          <input name="nieuwe todo"matInput (keydown.enter)="onAdd($event.target.value)">
+          <input name="nieuwe-todo"matInput (keydown.enter)="onAdd($event.target.value)">
         </mat-form-field>
       </mat-list-item>
     </mat-list>

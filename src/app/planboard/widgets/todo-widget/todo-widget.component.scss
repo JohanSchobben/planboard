@@ -1,0 +1,10 @@
+@import "src/abstracts";
+:host{
+  display: block;
+  width: 20rem;
+}
+
+
+.title-input {
+  @include text-input((400 24px/32px Roboto, "Helvetica Neue", sans-serif));
+}

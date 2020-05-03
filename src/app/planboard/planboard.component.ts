@@ -13,6 +13,8 @@ import {WidgetDrawerComponent} from './widget-drawer/widget-drawer.component';
 })
 export class PlanboardComponent {
   planboard$: Observable<Planboard>;
+  widgetType = WidgetType;
+
   constructor(
     private navigationService: NavigationService,
     private planboardService: PlanboardService,
@@ -32,10 +34,5 @@ export class PlanboardComponent {
   public openWidgetDrawer(): void {
     this.bottomSheet.open(WidgetDrawerComponent);
 
-  }
-
-  public onAdd(type: WidgetType){
-    this.bottomSheet.dismiss();
-    this.planboardService.AddWidget(type)
   }
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {TodoWidgetMeta, Task} from '../../../model';
 
 @Component({
@@ -8,7 +8,7 @@ import {TodoWidgetMeta, Task} from '../../../model';
 })
 export class TodoWidgetComponent {
   @Input('meta') todoList: TodoWidgetMeta;
-  @Input('update') update: EventEmitter<TodoWidgetMeta> = new EventEmitter<TodoWidgetMeta>();
+  @Output('update') update: EventEmitter<TodoWidgetMeta> = new EventEmitter<TodoWidgetMeta>();
   showError = false;
 
   public onAdd(newItem: string): void {

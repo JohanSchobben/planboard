@@ -4,3 +4,7 @@
   (menuClick)="onMenuClick()"></pb-cockpit>
 
 <pb-add-widget-button (open)="openWidgetDrawer()"></pb-add-widget-button>
+
+<ng-container *ngFor="let widget of (planboard$ | async).widgets" [ngSwitch]="widget.type">
+    <pb-todo-widget [meta]="widget.meta" *ngSwitchCase="widgetType.Todo"></pb-todo-widget>
+</ng-container>

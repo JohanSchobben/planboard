@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {DEFAULT_PLANBOARD_TOKEN} from './planboard/services/default-planboard.token';
 import {DEFAULT_PLANBOARD} from './planboard/default-planboard';
+import {DEFAULTS_TOKEN, defaultsMap} from './planboard/defaults/widget-defaults.const';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {DEFAULT_PLANBOARD} from './planboard/default-planboard';
     MatListModule,
   ],
   providers: [
-    {provide: DEFAULT_PLANBOARD_TOKEN, useValue: DEFAULT_PLANBOARD}
+    {provide: DEFAULT_PLANBOARD_TOKEN, useValue: DEFAULT_PLANBOARD},
+    {provide: DEFAULTS_TOKEN, useValue: defaultsMap}
   ],
   bootstrap: [AppComponent]
 })

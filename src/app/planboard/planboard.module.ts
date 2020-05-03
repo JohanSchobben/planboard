@@ -25,7 +25,7 @@ import {MatInputModule} from '@angular/material/input';
     MatBottomSheetModule,
     MatCardModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
   ],
 })
 export class PlanboardModule { }

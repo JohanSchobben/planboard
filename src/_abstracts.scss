@@ -1,0 +1,8 @@
+@mixin text-input($font) {
+  font: $font;
+  border: none;
+  background-color: transparent;
+  &:focus, &:active {
+    outline: none;
+  }
+}
