@@ -3,7 +3,8 @@ import {BehaviorSubject, Observable} from 'rxjs';
 import {Planboard, WidgetType} from '../../model';
 import {DEFAULT_PLANBOARD_TOKEN} from './default-planboard.token';
 import {Widget} from '../../model/widget.model';
-import {DEFAULTS_TOKEN} from '../defaults/widget-defaults.const';
+import {DEFAULTS_TOKEN, getDefault} from '../defaults/widget-defaults.const';
+import clone from "lodash/cloneDeep"
 
 @Injectable({
   providedIn: 'root'
@@ -23,22 +24,29 @@ export class PlanboardService {
    }
 
    public updateTitle(newTitle: string): void {
-     console.log(newTitle);
-     const currentPlanBoard = this.planboardSubject.getValue();
+     const currentPlanBoard = clone(this.planboardSubject.getValue());
       currentPlanBoard.title = newTitle;
       this.planboardSubject.next(currentPlanBoard);
    }
 
    public AddWidget(type: WidgetType): void {
-     const planboard = this.planboardSubject.getValue();
+     const currentPlanBoard = clone(this.planboardSubject.getValue());
      const widget: Widget<any> = {
        id: Date.now(),
        type,
        left: 0,
        top: 0,
-       meta: this.metaMap[type]
+       meta: getDefault(type)
      };
-     planboard.widgets.push(widget);
-     this.planboardSubject.next(planboard);
+
+     currentPlanBoard.widgets.push(widget);
+     this.planboardSubject.next(currentPlanBoard);
+   }
+
+   public updateMeta(id: number, meta: any){
+     const currentPlanBoard = clone(this.planboardSubject.getValue());
+     const widget: Widget<any> = currentPlanBoard.widgets.find(widget => widget.id === id);
+     widget.meta = meta;
+     this.planboardSubject.next(currentPlanBoard);
    }
 }

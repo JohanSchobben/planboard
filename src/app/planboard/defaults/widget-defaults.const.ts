@@ -1,5 +1,6 @@
 import {WidgetType} from '../../model';
 import {InjectionToken} from '@angular/core';
+import clone from "lodash/cloneDeep"
 
 const todoDefault = {
   title: "mijn nieuw todo",
@@ -12,6 +13,8 @@ const todoDefault = {
 
 export const defaultsMap = {
   [WidgetType.Todo]: todoDefault
-}
+};
 
 export const DEFAULTS_TOKEN = new InjectionToken("defaults")
+
+export const getDefault = (type: WidgetType) => clone(defaultsMap[type]);

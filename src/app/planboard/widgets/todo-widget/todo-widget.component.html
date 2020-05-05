@@ -5,12 +5,14 @@
   <mat-card-content>
     <mat-list>
       <mat-list-item *ngFor="let task of todoList?.tasks">
-        {{ task.taskName }}
+        <span mat-line>{{ task.taskName }}</span>
+        <span mat-line class="delete" (click)="deleteItem(task.taskName)">verwijderen</span>
+        <mat-checkbox [checked]="task.done" (change)="onCheckBoxClick(task.taskName)"></mat-checkbox>
       </mat-list-item>
       <mat-list-item>
         <mat-form-field appearance="fill">
-          <mat-label>Input</mat-label>
-          <input name="nieuwe-todo"matInput (keydown.enter)="onAdd($event.target.value)">
+          <mat-label>Nieuw item</mat-label>
+          <input #newItemInput name="nieuwe-todo" matInput (keydown.enter)="onAdd($event.target.value)">
         </mat-form-field>
       </mat-list-item>
     </mat-list>

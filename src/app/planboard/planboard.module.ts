@@ -13,6 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import { TodoWidgetComponent } from './widgets/todo-widget/todo-widget.component';
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {MatInputModule} from '@angular/material/input';
     MatCardModule,
     MatListModule,
     MatInputModule,
+    MatCheckboxModule,
   ],
 })
 export class PlanboardModule { }

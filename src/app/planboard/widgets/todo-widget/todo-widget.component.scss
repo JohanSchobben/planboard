@@ -8,3 +8,15 @@
 .title-input {
   @include text-input((400 24px/32px Roboto, "Helvetica Neue", sans-serif));
 }
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent !important;
+  padding-left: 0 !important;
+}
+
+.delete.mat-line {
+  font-size: .8em !important;
+  text-decoration: underline;
+  color: $accent;
+  cursor: pointer;
+}
